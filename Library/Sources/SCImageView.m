@@ -192,9 +192,10 @@
     if (image != nil) {
         image = [image imageByApplyingTransform:self.preferredCIImageTransform];
 
-        if (self.context.type != SCContextTypeEAGL) {
-            image = [image imageByApplyingOrientation:4];
-        }
+        // Why force rotation??
+//        if (self.context.type != SCContextTypeEAGL) {
+//            image = [image imageByApplyingOrientation:4];
+//        }
 
         if (self.scaleAndResizeCIImageAutomatically) {
             image = [self scaleAndResizeCIImage:image forRect:rect];
