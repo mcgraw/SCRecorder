@@ -414,6 +414,7 @@ NSString * const SCRecordSessionDocumentDirectory = @"DocumentDirectory";
     [self dispatchSyncOnSessionQueue:^{
         [_segments addObject:segment];
         _segmentsDuration = CMTimeAdd(_segmentsDuration, segment.duration);
+        _currentSegmentCount = (int)_segments.count;
     }];
 }
 
